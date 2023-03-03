@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+:root {
+  --text-color-primary: #0d130d;
+  --text-color-secondary: #000000;
+  --text-color-danger: #ef7f7b;
+  --text-color-success: #5db85b;
+  --bg-color: #f09b60;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  margin: 15px;
+}
+
+/* navbar styles */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  font-size: 16px;
+  letter-spacing: 3px;
+  font-weight: 800;
+  text-transform: uppercase;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.navbar .logo {
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 20px;
+  color: var(--text-color-primary);
+}
+
+.link-item a {
+  color: var(--text-color-primary);
+}
+
+.link-item a::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  display: block;
+  background: transparent;
+  transition: width 0.5s ease;
+}
+
+.link-item a:hover::after {
+  width: 100%;
+  background: var(--text-color-primary);
+}
+
+footer .media-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.media-links li {
+  margin: 0 5px;
+}
+
+.media-links li img {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+
+footer .copyright {
+  text-decoration: none;
+  color: var(--text-color-primary);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.copyright a {
+  color: var(--text-color-primary);
+}
+
+.txt-center {
+  text-align: center;
+}
+
+/* game board */
+
+.board-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px 10px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: 200px;
+}
+
+/* test styles */
+
+.card {
+  height: 200px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card-rotate {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* popup */

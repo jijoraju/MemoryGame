@@ -11,7 +11,6 @@
 * {
   font-family: "Open Sans", sans-serif;
   margin: 0;
-  padding: 0;
 }
 
 body {
@@ -33,6 +32,10 @@ ul {
   list-style: none;
 }
 
+.rules_list {
+  list-style: disc;
+}
+
 .container {
   margin: 15px;
 }
@@ -45,6 +48,46 @@ ul {
   padding: 20px;
   align-items: center;
 }
+
+.settings_tab {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.settings_tab label {
+  width: 150px;
+}
+
+.settings_tab input,
+.settings_tab select {
+  flex: 1;
+  width: 30%;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 33.33%;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+
+
 
 .menu {
   display: flex;

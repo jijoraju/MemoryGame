@@ -22,8 +22,57 @@
     </header>
     <main>
       <div class="container">
-        <div class="board-container"></div>
+        <p id="new_game"><a href="index.html">New Game</a></p>
+        
+        <h3>Highest Score <span id="highest_score"></span></h3>
+        
+        <div class="tabs">
+          <button class="tablinks" onclick="openTab(event, 'play')">Play Game</button>
+          <button class="tablinks" onclick="openTab(event, 'rules')">View Rules</button>
+          <button class="tablinks" onclick="openTab(event, 'settings')">Settings</button>
+        
+          <div id="play" class="tabcontent">
+            <h4>Player name: <span id="name"></span></h4>
+            <h4> Score: <span id="score"></span></h4>
+            <div class="board-container"></div>
+          </div>
+        
+          <div id="rules" class="tabcontent">
+            <fieldset>
+              <legend>How to play the Memory game</legend>
+              <ul class="rules_list">
+                  <li>The cards are placed face down. Each card has a matching card.</li>
+                  <li>For each turn, the player select two cards.</li>
+                  <li>If the cards match, they are removed from the board.</li>
+                  <li>If the cards don't match, they are turned face down again.</li>
+                  <li>At the end of the game, the player receives a score based on the number
+                      of correct selections that were made.</li>
+              </ul>
+          </fieldset>
+          </div>
+        
+          <div id="settings" class="tabcontent">
+            <div class="settings_tab">
+              <label for='player_name'>Player name:</label>
+              <input type='text' id='player_name'><br>
+              
+              <label for='num_cards'>Number of cards:</label>
+              <select id='num_cards'>
+                  <option>48</option>
+                  <option>40</option>
+                  <option>32</option>
+                  <option>24</option>
+                  <option>16</option>
+                  <option>8</option>
+              </select><br>
+            </div>
+              <input type='button' id='save_settings' value='Save Settings'>
+          </div>
+        </div>
       </div>
+     
+      
+      
     </main>
     <footer>
       <ul class="media-links">

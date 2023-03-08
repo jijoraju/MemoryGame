@@ -10,6 +10,24 @@ const images = [
 ];
 
 window.onload = function () {
+  // Open the default tab
+  // Open the "Play Game" tab by default
+  document.getElementById("play").style.display = "block";
+  document.getElementsByClassName("tablinks")[0].className += " active";
+
+  // Function to switch tabs
+
+  let save_settings = document.getElementById("save_settings");
+  save_settings.addEventListener("click", () => {
+    inputName = document.getElementById("player_name").value;
+    inputCards = document.getElementById("num_cards").value;
+    console.log(inputName, inputCards);
+    sessionStorage.setItem("input_name", inputName);
+    sessionStorage.setItem("input_cards", inputCards);
+  });
+
+  let playerName = document.getElementById("name");
+  playerName.textContent = sessionStorage.getItem("input_name");
   // create a card element for each image and duplicate it
   let playing_cards = getPlayingCards();
 
@@ -27,8 +45,13 @@ window.onload = function () {
 };
 
 const getPlayingCards = () => {
-  let palyingImages = getImagesOfSize(images, 2);
+  const input_cards = sessionStorage.getItem("input_cards");
+  console.log({ input_cards });
+  const no_of_images_display = parseInt(input_cards) / 2;
+  console.log(no_of_images_display);
+  let palyingImages = getImagesOfSize(images, no_of_images_display);
   // Create an array to hold all the cards
+  console.log({ palyingImages });
   const playing_cards = palyingImages.flatMap((image) => {
     const card = document.createElement("div");
     card.className = "card";
@@ -46,7 +69,7 @@ const getPlayingCards = () => {
     // Return an array containing the new card element and a clone of the new card element
     return [card, card.cloneNode(true)];
   });
-
+  console.log({ playing_cards });
   // Shuffle the playing_cards array using the Fisher-Yates algorithm
   return playing_cards.sort(() => Math.random() - 0.5);
 };
@@ -93,4 +116,24 @@ const checkCards = (cards, onGameOver) => {
       }
     });
   });
+};
+
+const openTab = (evt, tabName) => {
+  var i, tabcontent, tablinks;
+
+  // Hide all tab content
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the "active" class from all tab links
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab and add an "active" class to the button that opened the tab
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
 };

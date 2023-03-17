@@ -22,88 +22,117 @@
     </header>
     <main>
       <div class="container">
-        <p id="new_game"><a href="index.html">New Game</a></p>
-        
-        <h3>Highest Score <span id="highest_score"></span></h3>
-        
+        <div class="new-game">
+          <div class="high-score">
+            <img
+              class="icon"
+              src="assets/images/high-score.png"
+              alt="highscore"
+            />
+            <div id="highest_score" class="highest-score"></div>
+          </div>
+          <a href="index.html"
+            ><button class="btn btn-gray" id="new_game">New Game</button></a
+          >
+        </div>
+
         <div class="tabs">
-          <button class="tablinks" onclick="openTab(event, 'play')">Play Game</button>
-          <button class="tablinks" onclick="openTab(event, 'rules')">View Rules</button>
-          <button class="tablinks" onclick="openTab(event, 'settings')">Settings</button>
-        
+          <div class="tab-button">
+            <button class="tab tablinks" onclick="openTab(event, 'play')">
+              Play Game
+            </button>
+            <button class="tab tablinks" onclick="openTab(event, 'rules')">
+              View Rules
+            </button>
+            <button class="tab tablinks" onclick="openTab(event, 'settings')">
+              Settings
+            </button>
+          </div>
+
           <div id="play" class="tabcontent">
-            <h4>Player name: <span id="name"></span></h4>
-            <h4> Score: <span id="score"></span></h4>
+            <div class="player-details">
+              <h4>Player name: <span id="name"></span></h4>
+              <h4>Score: <span id="score"></span></h4>
+            </div>
+
+            <h2 class="game-countdown" id="game-countdown"></h2>
             <div class="board-container"></div>
           </div>
-        
+
           <div id="rules" class="tabcontent">
             <fieldset>
               <legend>How to play the Memory game</legend>
               <ul class="rules_list">
-                  <li>The cards are placed face down. Each card has a matching card.</li>
-                  <li>For each turn, the player select two cards.</li>
-                  <li>If the cards match, they are removed from the board.</li>
-                  <li>If the cards don't match, they are turned face down again.</li>
-                  <li>At the end of the game, the player receives a score based on the number
-                      of correct selections that were made.</li>
+                <li>
+                  The cards are placed face down. Each card has a matching card.
+                </li>
+                <li>For each turn, the player select two cards.</li>
+                <li>If the cards match, they are removed from the board.</li>
+                <li>
+                  If the cards don't match, they are turned face down again.
+                </li>
+                <li>
+                  At the end of the game, the player receives a score based on
+                  the number of correct selections that were made.
+                </li>
               </ul>
-          </fieldset>
+            </fieldset>
           </div>
-        
+
           <div id="settings" class="tabcontent">
             <div class="settings_tab">
-              <label for='player_name'>Player name:</label>
-              <input type='text' id='player_name'><br>
-              
-              <label for='num_cards'>Number of cards:</label>
-              <select id='num_cards'>
-                  <option>48</option>
-                  <option>40</option>
-                  <option>32</option>
-                  <option>24</option>
-                  <option>16</option>
-                  <option>8</option>
-              </select><br>
+              <label for="player_name">Player name:</label>
+              <input type="text" id="player_name" /><br />
+
+              <label for="num_cards">Number of cards:</label>
+              <select id="num_cards">
+                <option>48</option>
+                <option>40</option>
+                <option>32</option>
+                <option>24</option>
+                <option>16</option>
+                <option>8</option></select
+              ><br />
             </div>
-              <input type='button' id='save_settings' value='Save Settings'>
+            <input type="button" id="save_settings" value="Save Settings" />
           </div>
         </div>
       </div>
-     
-      
-      
     </main>
     <footer>
       <ul class="media-links">
         <li>
-          <a href="https://www.facebook.com/imjijo/"
+          <a href="#"
             ><img
               src="assets/images/facebook.svg"
               alt="facebook logo"
-              class="icon" />
+              class="icon"
+            />
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/imjijo"
+          <a href="#"
             ><img
               src="assets/images/twitter.svg"
               class="icon"
-              alt="twitter logo" />
+              alt="twitter logo"
+            />
           </a>
         </li>
         <li>
-          <a href="https://www.instagram.com/imjijo"
+          <a href="#"
             ><img
               src="assets/images/instagram.svg"
               class="icon"
-              alt="instagram logo" />
+              alt="instagram logo"
+            />
           </a>
         </li>
       </ul>
 
       <p class="copyright">
-        copyright &copy;2022 Created by <a href="#">Jijo Raju(8764379)</a>
+        Copyright &copy;2022 Created by
+        <a href="#">Jijo(8764379), Nuthan(), Shebin(8769444)</a>
       </p>
     </footer>
   </body>
